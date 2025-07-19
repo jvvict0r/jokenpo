@@ -5,31 +5,21 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Enumeração para as escolhas do jogo
-typedef enum { PEDRA = 1, PAPEL, TESOURA } Escolha;
 
-// Enumeração para os resultados da partida
+typedef enum { PEDRA = 1, PAPEL, TESOURA } Escolha;
 typedef enum { VITORIA, DERROTA, EMPATE } Resultado;
 
-// Exibe o menu principal do jogo
-void exibir_menu();
 
-// Exibe as regras do jogo Jokenpo
-void exibir_regras();
+void jogar();
+void animacao_abertura();
 
-// Obtém a escolha do jogador (Pedra, Papel ou Tesoura)
-Escolha obter_escolha_jogador();
 
-// Gera uma escolha aleatória para o bot
-Escolha obter_escolha_bot();
-
-// Determina o vencedor da rodada
+const char* obter_nome_escolha(Escolha escolha);
 Resultado determinar_vencedor(Escolha jogador, Escolha bot);
 
-// Retorna o nome da escolha como uma string
-const char *obter_nome_escolha(Escolha escolha);
-
-// Função principal que gerencia o jogo
-void jogar();
+void carregar_ranking();
+void salvar_ranking();
+void cadastrar_jogador();
+void liberar_memoria();
 
 #endif
